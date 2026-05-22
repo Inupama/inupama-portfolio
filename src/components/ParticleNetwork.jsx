@@ -25,7 +25,7 @@ function initParticles(count, width, height) {
   return particles
 }
 
-export default function ParticleNetwork({ className = '' }) {
+export default function ParticleNetwork({ className = '', mobile = false }) {
   const containerRef = useRef(null)
   const canvasRef = useRef(null)
   const mouseRef = useRef({ x: -1000, y: -1000, active: false })
@@ -224,20 +224,33 @@ export default function ParticleNetwork({ className = '' }) {
         className="block h-full w-full cursor-crosshair"
         aria-hidden
       />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(circle at 50% 50%, rgba(27, 58, 92, 0.45) 0%, transparent 65%)',
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 50%, rgba(27, 58, 92, 0.7) 100%)',
-        }}
-      />
+      {!mobile && (
+        <>
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(circle at 50% 50%, rgba(27, 58, 92, 0.45) 0%, transparent 65%)',
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 50%, rgba(27, 58, 92, 0.7) 100%)',
+            }}
+          />
+        </>
+      )}
+      {mobile && (
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(27, 58, 92, 0.35) 0%, transparent 30%, transparent 70%, rgba(27, 58, 92, 0.2) 100%)',
+          }}
+        />
+      )}
     </div>
   )
 }

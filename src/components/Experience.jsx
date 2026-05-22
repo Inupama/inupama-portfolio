@@ -16,11 +16,6 @@ const timeline = [
     role: 'Member (IGT & IR)',
     period: '2024 – 2025',
   },
-  {
-    org: 'Mahinda Rajapaksha College',
-    role: 'Junior Prefect',
-    period: '2015 – 2018',
-  },
 ]
 
 export default function Experience() {

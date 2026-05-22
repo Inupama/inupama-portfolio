@@ -18,22 +18,15 @@ export default function Hero() {
         <div className="hero-wave absolute inset-0 opacity-30" />
       </div>
 
-      {/* Mobile — particle background behind text */}
-      <div className="pointer-events-none absolute inset-x-4 top-16 bottom-8 z-0 overflow-hidden opacity-70 lg:hidden">
-        <ParticleNetwork />
-      </div>
-
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="grid items-center gap-10 lg:grid-cols-[55fr_45fr] lg:gap-8">
-          {/* Left — text (55%) */}
-          <div className="relative z-20">
-            <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-r from-navy via-navy/92 to-navy/50 lg:hidden" />
-
+        <div className="flex flex-col lg:grid lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-8">
+          {/* Text — centered on mobile, unchanged on desktop */}
+          <div className="relative z-20 flex flex-col items-center text-center lg:items-start lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="relative"
+              className="relative w-full"
             >
               <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
                 Data Science Undergraduate · SLIIT
@@ -47,12 +40,12 @@ export default function Hero() {
                 Aspiring Data Scientist & Full-Stack Developer
               </h2>
 
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+              <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg lg:mx-0">
                 Turning data into insights and ideas into scalable applications — passionate
                 about analytics, data engineering, and building meaningful digital experiences.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
                 <a
                   href="#projects"
                   onClick={scrollToProjects}
@@ -71,7 +64,12 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — particle canvas (45%), desktop */}
+          {/* Mobile — particle network at bottom of hero */}
+          <div className="relative mt-10 h-52 w-full overflow-hidden sm:h-60 lg:hidden">
+            <ParticleNetwork />
+          </div>
+
+          {/* Desktop — particle canvas (45%), unchanged */}
           <div className="relative hidden h-[min(78vh,680px)] w-full overflow-hidden lg:block">
             <ParticleNetwork />
           </div>

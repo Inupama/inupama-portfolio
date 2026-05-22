@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-navy: #1b3a5c;
+  --color-teal: #0d7c8c;
+  --color-light-gray: #f4f6f8;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  @apply bg-white text-navy antialiased dark:bg-slate-900 dark:text-slate-100;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light-gray dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-teal/60 hover:bg-teal;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-wave {
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(13, 124, 140, 0.4) 50%,
+    transparent 60%
+  );
+  background-size: 200% 200%;
+  animation: wave 8s ease-in-out infinite;
+}

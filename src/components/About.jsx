@@ -16,10 +16,12 @@ export default function About() {
       className="bg-light-gray px-4 py-20 dark:bg-slate-800/50 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-3xl font-bold text-navy dark:text-white sm:text-left">
-          About Me
-        </h2>
-        <div className="mt-4 h-1 w-16 rounded-full bg-teal" />
+        <div className="flex flex-col items-center sm:items-start">
+          <h2 className="text-3xl font-bold text-navy dark:text-white">
+            About Me
+          </h2>
+          <div className="mt-4 h-1 w-16 rounded-full bg-teal" />
+        </div>
 
         <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
           <div>

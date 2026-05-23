@@ -242,15 +242,6 @@ export default function ParticleNetwork({ className = '', mobile = false }) {
           />
         </>
       )}
-      {mobile && (
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(27, 58, 92, 0.35) 0%, transparent 30%, transparent 70%, rgba(27, 58, 92, 0.2) 100%)',
-          }}
-        />
-      )}
     </div>
   )
 }

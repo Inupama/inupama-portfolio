@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] overflow-hidden bg-navy px-4 py-24 sm:px-6 lg:px-8 lg:pt-14 lg:pb-20"
+      className="relative min-h-[90vh] overflow-hidden bg-navy px-4 py-24 sm:px-6 lg:px-8 lg:pt-20 lg:pb-20"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-teal/30 blur-3xl animate-pulse" />
@@ -19,9 +19,9 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="flex flex-col lg:grid lg:grid-cols-[55fr_45fr] lg:items-start lg:gap-8 lg:pt-4">
+        <div className="flex flex-col lg:grid lg:grid-cols-[55fr_45fr] lg:items-start lg:gap-8 lg:pt-10">
           {/* Text — centered on mobile, unchanged on desktop */}
-          <div className="relative z-20 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="relative z-20 flex flex-col items-center text-center lg:items-start lg:text-left lg:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,15 @@ export default function Hero() {
           </div>
 
           {/* Mobile — particle network at bottom of hero */}
-          <div className="relative mt-10 h-52 w-full sm:h-60 lg:hidden">
+          <div
+            className="relative -mx-4 mt-10 h-56 w-[calc(100%+2rem)] sm:-mx-6 sm:h-64 sm:w-[calc(100%+3rem)] lg:hidden"
+            style={{
+              maskImage:
+                'radial-gradient(ellipse 92% 88% at 50% 50%, black 45%, transparent 100%)',
+              WebkitMaskImage:
+                'radial-gradient(ellipse 92% 88% at 50% 50%, black 45%, transparent 100%)',
+            }}
+          >
             <ParticleNetwork mobile />
           </div>
 
